@@ -497,7 +497,7 @@ class Dispatcher(object):
     def send(self, data):
         """Send `data` to the remote end-point of the socket."""
         try:
-            log.debug('[%s:%d] <<< %r', self.addr[0], self.addr[1], data)
+            log.debug('[%s:%d] <<< %r', self.addr[0], self.addr[1], str(data))
             result = self.socket.send(data)
             return result
         except socket.error as err:
